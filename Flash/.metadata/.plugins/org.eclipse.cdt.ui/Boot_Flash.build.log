@@ -1,0 +1,112 @@
+20:01:54 **** Build of configuration Debug for project Boot_Flash ****
+make -j4 all 
+arm-none-eabi-gcc -mcpu=cortex-m4 -g3 -c -x assembler-with-cpp --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Startup/startup_stm32f401retx.o" "../Startup/startup_stm32f401retx.s"
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/CMSIS/Include" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/STM32F401RE_StdPeriph_Driver/inc" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/button" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/buzzer" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/led" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/rtos" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/sensor" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/serial" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/ucglib" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Utilities" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc "../Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/CMSIS/Include" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/STM32F401RE_StdPeriph_Driver/inc" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/button" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/buzzer" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/led" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/rtos" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/sensor" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/serial" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/ucglib" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Utilities" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/syscalls.d" -MT"Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/syscalls.o"
+arm-none-eabi-gcc "../Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DSTM32 -DSTM32F401RETx -DSTM32F4 -DDEBUG -c -I../Inc -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/CMSIS/Include" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Drivers/STM32F401RE_StdPeriph_Driver/inc" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/button" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/buzzer" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/led" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/rtos" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/sensor" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/serial" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Middle/ucglib" -I"D:/IOT302_Funix/SDK_1.0.3_NUCLEO-F401RE/shared/Utilities" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/sysmem.d" -MT"Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/sysmem.o"
+../Src/main.c: In function 'deleteBuffer':
+../Src/main.c:17:16: warning: implicit declaration of function 'strlen' [-Wimplicit-function-declaration]
+  uint8_t len = strlen(data);
+                ^~~~~~
+../Src/main.c:17:16: warning: incompatible implicit declaration of built-in function 'strlen'
+../Src/main.c:17:16: note: include '<string.h>' or provide a declaration of 'strlen'
+../Src/main.c: In function 'Flash_Lock':
+../Src/main.c:29:16: error: 'FLASH_KEY1' undeclared (first use in this function); did you mean 'FLASH_IRQn'?
+  FLASH->KEYR = FLASH_KEY1;
+                ^~~~~~~~~~
+                FLASH_IRQn
+../Src/main.c:29:16: note: each undeclared identifier is reported only once for each function it appears in
+../Src/main.c:30:16: error: 'FLASH_KEY2' undeclared (first use in this function); did you mean 'FLASH_KEY1'?
+  FLASH->KEYR = FLASH_KEY2;
+                ^~~~~~~~~~
+                FLASH_KEY1
+../Src/main.c: At top level:
+../Src/main.c:46:1: error: unknown type name 'FLASH_Status'; did you mean 'FlagStatus'?
+ FLASH_Status FLASH_WaitForLastOperation(void)
+ ^~~~~~~~~~~~
+ FlagStatus
+../Src/main.c: In function 'FLASH_WaitForLastOperation':
+../Src/main.c:48:8: error: unknown type name 'FLASH_Status'
+   __IO FLASH_Status status = FLASH_COMPLETE;
+        ^~~~~~~~~~~~
+../Src/main.c:48:30: error: 'FLASH_COMPLETE' undeclared (first use in this function); did you mean 'FLASH_CR_PSIZE'?
+   __IO FLASH_Status status = FLASH_COMPLETE;
+                              ^~~~~~~~~~~~~~
+                              FLASH_CR_PSIZE
+../Src/main.c:51:12: warning: implicit declaration of function 'FLASH_GetStatus'; did you mean 'RCC_GetITStatus'? [-Wimplicit-function-declaration]
+   status = FLASH_GetStatus();
+            ^~~~~~~~~~~~~~~
+            RCC_GetITStatus
+../Src/main.c:56:19: error: 'FLASH_BUSY' undeclared (first use in this function); did you mean 'FLASH_BASE'?
+   while(status == FLASH_BUSY)
+                   ^~~~~~~~~~
+                   FLASH_BASE
+../Src/main.c: At top level:
+../Src/main.c:91:1: error: unknown type name 'FLASH_Status'; did you mean 'FlagStatus'?
+ FLASH_Status FLASH_GetStatus(void)
+ ^~~~~~~~~~~~
+ FlagStatus
+../Src/main.c: In function 'FLASH_GetStatus':
+../Src/main.c:93:3: error: unknown type name 'FLASH_Status'; did you mean 'FlagStatus'?
+   FLASH_Status flashstatus = FLASH_COMPLETE;
+   ^~~~~~~~~~~~
+   FlagStatus
+../Src/main.c:93:30: error: 'FLASH_COMPLETE' undeclared (first use in this function); did you mean 'FLASH_CR_PSIZE'?
+   FLASH_Status flashstatus = FLASH_COMPLETE;
+                              ^~~~~~~~~~~~~~
+                              FLASH_CR_PSIZE
+../Src/main.c:95:19: error: 'FLASH_FLAG_BSY' undeclared (first use in this function); did you mean 'FLASH_SR_BSY'?
+   if((FLASH->SR & FLASH_FLAG_BSY) == FLASH_FLAG_BSY)
+                   ^~~~~~~~~~~~~~
+                   FLASH_SR_BSY
+../Src/main.c:97:19: error: 'FLASH_BUSY' undeclared (first use in this function); did you mean 'FLASH_BASE'?
+     flashstatus = FLASH_BUSY;
+                   ^~~~~~~~~~
+                   FLASH_BASE
+../Src/main.c:101:21: error: 'FLASH_FLAG_WRPERR' undeclared (first use in this function); did you mean 'FLASH_SR_WRPERR'?
+     if((FLASH->SR & FLASH_FLAG_WRPERR) != (uint32_t)0x00)
+                     ^~~~~~~~~~~~~~~~~
+                     FLASH_SR_WRPERR
+../Src/main.c:103:21: error: 'FLASH_ERROR_WRP' undeclared (first use in this function); did you mean 'FLASH_OPTCR_nWRP'?
+       flashstatus = FLASH_ERROR_WRP;
+                     ^~~~~~~~~~~~~~~
+                     FLASH_OPTCR_nWRP
+../Src/main.c:109:23: error: 'FLASH_ERROR_PROGRAM' undeclared (first use in this function); did you mean 'FLASH_ERROR_WRP'?
+         flashstatus = FLASH_ERROR_PROGRAM;
+                       ^~~~~~~~~~~~~~~~~~~
+                       FLASH_ERROR_WRP
+../Src/main.c:113:25: error: 'FLASH_FLAG_OPERR' undeclared (first use in this function); did you mean 'FLASH_FLAG_WRPERR'?
+         if((FLASH->SR & FLASH_FLAG_OPERR) != (uint32_t)0x00)
+                         ^~~~~~~~~~~~~~~~
+                         FLASH_FLAG_WRPERR
+../Src/main.c:115:25: error: 'FLASH_ERROR_OPERATION' undeclared (first use in this function); did you mean 'FLASH_ERROR_PROGRAM'?
+           flashstatus = FLASH_ERROR_OPERATION;
+                         ^~~~~~~~~~~~~~~~~~~~~
+                         FLASH_ERROR_PROGRAM
+../Src/main.c: At top level:
+../Src/main.c:129:1: error: unknown type name 'FLASH_Status'; did you mean 'FlagStatus'?
+ FLASH_Status FLASH_EraseSector(uint32_t FLASH_Sector, uint8_t VoltageRange)
+ ^~~~~~~~~~~~
+ FlagStatus
+../Src/main.c: In function 'FLASH_EraseSector':
+../Src/main.c:132:3: error: unknown type name 'FLASH_Status'; did you mean 'FlagStatus'?
+   FLASH_Status status = FLASH_COMPLETE;
+   ^~~~~~~~~~~~
+   FlagStatus
+../Src/main.c:132:25: error: 'FLASH_COMPLETE' undeclared (first use in this function); did you mean 'FLASH_CR_PSIZE'?
+   FLASH_Status status = FLASH_COMPLETE;
+                         ^~~~~~~~~~~~~~
+                         FLASH_CR_PSIZE
+../Src/main.c:140:18: error: 'CR_PSIZE_MASK' undeclared (first use in this function); did you mean '__SIZE_MAX__'?
+     FLASH->CR &= CR_PSIZE_MASK;
+                  ^~~~~~~~~~~~~
+                  __SIZE_MAX__
+../Src/main.c:142:18: error: 'SECTOR_MASK' undeclared (first use in this function)
+     FLASH->CR &= SECTOR_MASK;
+                  ^~~~~~~~~~~
+make: *** [Src/subdir.mk:24: Src/main.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+20:02:11 Build Failed. 23 errors, 3 warnings. (took 17s.461ms)
+
